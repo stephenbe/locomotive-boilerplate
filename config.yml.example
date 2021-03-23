@@ -1,0 +1,5 @@
+development:
+    password: <password>
+    theme_id: "<theme id>"
+    store: <store.myshopify.com>
+    directory: www
