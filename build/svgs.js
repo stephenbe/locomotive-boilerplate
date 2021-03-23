@@ -7,13 +7,13 @@ export function generateSpriteSVG() {
 
     // Write sprite content on disk
     mixer([
-        paths.svgs.src + '*.svg'
+        paths.svgs.src + '*.liquid'
     ], {
         spriteConfig: {
             usages: false
         }
     }).then((result) => {
-        result.write(paths.svgs.dest + 'sprite.svg');
+        result.write(paths.svgs.dest + 'sprite.liquid');
         message('SVG Sprite generated', 'success', 'Sprite generated in');
     });
 }

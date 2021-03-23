@@ -5,22 +5,22 @@
     "build": "./build/",
     "styles": {
         "src": "./assets/styles/",
-        "dest": "./www/assets/styles/",
+        "dest": "./www/assets/",
         "main": "main",
         "critical": "critical"
     },
     "scripts": {
         "src": "./assets/scripts/",
-        "dest": "./www/assets/scripts/",
+        "dest": "./www/assets/",
         "main": "app",
         "vendors": {
-            "src": "./assets/scripts/vendors/",
+            "src": "./assets/scripts/",
             "main": "vendors"
         }
     },
     "svgs": {
         "src": "./assets/images/sprite/",
-        "dest": "./www/assets/images/"
+        "dest": "./www/snippets/"
     },
     "views": {
         "src": "./views/boilerplate/template/"
