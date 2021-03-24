@@ -8,7 +8,7 @@
 
 ## @TODO
 * Maybe add `.env` to manage global variables and integrate them in `config.yml`
-* Add some kind of live reloading to enhance workflow
+* ✅ Add some kind of live reloading to enhance workflow
 
 ## Requirements
 
