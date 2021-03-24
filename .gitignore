@@ -3,3 +3,6 @@ node_modules
 Thumbs.db
 config.yml
 !config.yml.example
+mconfig.json
+!mconfig.json.example
+
