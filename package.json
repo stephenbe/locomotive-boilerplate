@@ -13,6 +13,7 @@
         "build": "node --experimental-json-modules --no-warnings build/build.js"
     },
     "dependencies": {
+        "@shopify/theme-cart": "^4.1.1",
         "locomotive-scroll": "*",
         "modujs": "^1.4.2",
         "modularload": "^1.2.6",
