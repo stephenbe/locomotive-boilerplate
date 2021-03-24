@@ -50,8 +50,14 @@ npm start
 
 Second tab:
 ```sh
-# themekit watch command
-theme watch --allow-live
+# themekit watch command, env specified
+theme watch --env=local --allow-live
+```
+
+## Deploy
+```sh
+# themekit deploy command with env specified
+theme deploy --env=development --allow-live
 ```
 
 ## Build
