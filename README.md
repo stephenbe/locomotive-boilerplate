@@ -29,7 +29,7 @@ npm i
 
 ## Configuration
 Basic knowledge of [ThemeKit](https://github.com/Shopify/themekit) is required.
-* Duplicate `config.yml.example` to `config.yml`
+* Duplicate `config.yml.example` to `config.yml` and fill with your theme credentials
 ```sh
 # Example
 development:
@@ -38,6 +38,8 @@ development:
     store: <store.myshopify.com>
     directory: www
 ```
+* Duplicate `mconfig.json.example` to `mconfig.json`
+* In `mconfig.json` change `url` to add your Shopify URL. This URL will be use to create a proxy.
 
 ## Usage
 Open 2 terminal tabs
