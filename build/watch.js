@@ -5,14 +5,24 @@ import { generateSpriteSVG } from './svgs.js';
 import paths from '../mconfig.json';
 
 // Create an named instance in one file...
-// import bs from 'browser-sync';
+import bs from 'browser-sync';
 
 // Start the Browsersync server
-// bs.init({
-//     proxy: paths.url,
-//     open: false,
-//     notify: false
-// });
+bs.init({
+    proxy: paths.url,
+    open: false,
+    notify: false,
+    reloadDelay: 1000,
+    // Fix analytics injection bug
+    snippetOptions: {
+        rule: {
+            match: /<\/body>/i,
+            fn: function (snippet, match) {
+                return snippet + match;
+            }
+        }
+    }
+});
 
 // Build scripts, compile styles, concat vendors and generate the svgs sprite on first hit
 buildScripts();
@@ -22,48 +32,48 @@ generateSpriteSVG();
 
 // and call any methods on it.
 
-// bs.watch(
-//     [
-//         paths.views.src,
-//         paths.scripts.dest + paths.scripts.main + '.js',
-//         paths.scripts.dest + paths.scripts.vendors.main + '.js',
-//         paths.styles.dest + paths.styles.main + '.css',
-//         paths.svgs.dest + 'sprite.svg'
-//     ]
-// ).on('change', bs.reload);
+bs.watch(
+    [
+        paths.views.src,
+        paths.scripts.dest + paths.scripts.main + '.js',
+        paths.scripts.dest + paths.scripts.vendors.main + '.js',
+        paths.styles.dest + paths.styles.main + '.css',
+        paths.svgs.dest + 'sprite.svg'
+    ]
+).on('change', bs.reload);
 
 // Watch scripts
-// bs.watch(
-//     [
-//         paths.scripts.src + '**/*.js'
-//     ]
-// ).on('change', () => {
-//     buildScripts();
-// });
+bs.watch(
+    [
+        paths.scripts.src + '**/*.js'
+    ]
+).on('change', () => {
+    buildScripts();
+});
 
-// // Watch scripts vendors
-// bs.watch(
-//     [
-//         paths.scripts.vendors.src + '*.js'
-//     ]
-// ).on('change', () => {
-//     concatVendors();
-// });
+// Watch scripts vendors
+bs.watch(
+    [
+        paths.scripts.vendors.src + '*.js'
+    ]
+).on('change', () => {
+    concatVendors();
+});
 
-// // Watch styles
-// bs.watch(
-//     [
-//         paths.styles.src + '**/*.scss'
-//     ]
-// ).on('change', () => {
-//     compileStyles();
-// });
+// Watch styles
+bs.watch(
+    [
+        paths.styles.src + '**/*.scss'
+    ]
+).on('change', () => {
+    compileStyles();
+});
 
-// // Watch svgs
-// bs.watch(
-//     [
-//         paths.svgs.src + '*.svg'
-//     ]
-// ).on('change', () => {
-//     generateSpriteSVG();
-// });
+// Watch svgs
+bs.watch(
+    [
+        paths.svgs.src + '*.svg'
+    ]
+).on('change', () => {
+    generateSpriteSVG();
+});

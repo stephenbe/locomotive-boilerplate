@@ -1,5 +1,5 @@
 {
-    "url": "locomotive-boilerplate.test",
+    "url": "https://locomotive-boilerplate.myshopify.com",
     "src": "./assets/",
     "dest": "./www/",
     "build": "./build/",
@@ -14,7 +14,7 @@
         "dest": "./www/assets/",
         "main": "app",
         "vendors": {
-            "src": "./assets/scripts/",
+            "src": "./assets/scripts/vendors/",
             "main": "vendors"
         }
     },
