@@ -1,5 +1,18 @@
-development:
+local:
     password: <password>
     theme_id: "<theme id>"
     store: <store.myshopify.com>
     directory: www
+
+#staging:
+#    password: <password>
+#    theme_id: "<theme id>"
+#    store: <store.myshopify.com>
+#    directory: www
+
+#production:
+#    password: <password>
+#    theme_id: "<theme id>"
+#    store: <store.myshopify.com>
+#    directory: www
+#    readonly: true
